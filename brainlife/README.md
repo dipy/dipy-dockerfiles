@@ -10,13 +10,19 @@ a bunch of state-of-the-art techniques.
 
 In your terminal, type:
 ```{bash}
-$ docker pull skab12/dipy-brainlife
+$ docker pull skab12/dipy-brainlife:1.0.0
 ```
 
 To run a specific command line of the tool:
 
 ```{bash}
 $ docker run -i --rm skab12/dipy-brainlife dipy_info -h
+```
+
+or  with Singularity:
+
+```{bash}
+$ SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://skab12/dipy:1.0.0 dipy_info -h
 ```
 
 To get access to the list of available DIPY command line. you can get more information
