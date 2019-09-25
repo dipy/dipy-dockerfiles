@@ -19,12 +19,10 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
-RUN git clone https://github.com/nipy/dipy.git
-
 RUN pip install --upgrade setuptools pip
 
 # install default requirement
-RUN pip install -r dipy/requirements.txt
+RUN pip install numpy scipy cython nibabel h5py
 
 # install optional dependency
 RUN conda config --set always_yes yes --set changeps1 no && \
@@ -34,7 +32,7 @@ RUN conda config --set always_yes yes --set changeps1 no && \
 RUN pip install scikit-learn scikit-image statsmodels fury matplotlib tables pandas
 
 # install DIPY
-RUN cd dipy &&  pip install .
+RUN pip install dipy==0.16.0
 
 #make it work under singularity
 RUN ldconfig && mkdir -p /N/u /N/home /N/dc2 /N/soft
