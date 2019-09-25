@@ -19,5 +19,11 @@ To run a specific command line of the tool:
 $ docker run -i --rm skab12/dipy-brainlife dipy_info -h
 ```
 
+or  with Singularity:
+
+```{bash}
+$ SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://skab12/dipy dipy_info -h
+```
+
 To get access to the list of available DIPY command line. you can get more information
 on [DIPY website](https://dipy.org/documentation/1.0.0./reference_cmd/)
