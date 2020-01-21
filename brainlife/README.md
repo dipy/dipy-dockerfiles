@@ -26,4 +26,4 @@ $ SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://skab12/dipy 
 ```
 
 To get access to the list of available DIPY command line. you can get more information
-on [DIPY website](https://dipy.org/documentation/1.0.0./reference_cmd/)
+on [DIPY website](https://dipy.org/documentation/latest/reference_cmd/)
